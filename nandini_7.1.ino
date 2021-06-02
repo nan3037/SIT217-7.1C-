@@ -2,7 +2,6 @@ int rightpin1 = 6;
 int rightpin2 = 7;
 int leftpin1 = 8;
 int leftpin2 = 9;
-int control_pin = 10;
 char value;
 
 void setup()
@@ -13,7 +12,6 @@ void setup()
   pinMode(rightpin2, OUTPUT);
   pinMode(leftpin1, OUTPUT); 
   pinMode(leftpin2, OUTPUT); 
-  pinMode(control_pin, OUTPUT);
   Serial.begin(9600);
 }
 
@@ -25,14 +23,6 @@ void loop()
     Serial.println(value);
   }
 
-  if (value == 'V')
-  {
-    digitalWrite(control_pin, HIGH);
-  }
-  if (value == 'v')
-  {
-    digitalWrite(control_pin, LOW);
-  }
 
   if ( value == 'F') // Forward
   {
